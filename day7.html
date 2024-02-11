@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Day 7</title>
+</head>
+<body>
+    <form onsubmit="return confirm('Are you sure you want to submit?')">
+        <p>Confirm function</p>
+
+        <input type="text" placeholder="username">
+        <br><br>
+        <input type="text" placeholder="First Name">
+        <br><br>
+        <input type="password" placeholder="password" id="password" onkeyup = "check()">
+        <br><br>
+        <input type="password" id="confirm_password" placeholder="confirm_password" onkeyup="check()">
+        <br>
+        <span id="message"></span>
+        <br>
+        <input type="submit" value = "Click to submit.">
+
+    </form>
+    <br><br>
+
+    <form onsubmit="return prompt('Username and Password matched!')">
+        <p>Alert function / Prompt function</p>
+        <input type="text" placeholder="username">
+        <br><br>
+        <input type="password" placeholder="Password">
+        <br><br>
+        <input type="submit" value="Log in">
+
+    </form>
+
+    <script>
+        function check() {
+            if(document.getElementById('password').value == document.getElementById('confirm_password').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Password matched';
+            }else{
+                document.getElementById('message').style.color = 'red';
+                doc.getElementById('message').innerHTML = 'Password does not match'
+            }
+        }
+    </script>
+</body>
+</html>
